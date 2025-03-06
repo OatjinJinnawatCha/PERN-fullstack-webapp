@@ -5,7 +5,7 @@ add .env file with DATABASE_URL config
 DATABASE_URL="postgresql://postgres:postgres@localhost:5435/postgres?schema=public"
 
 1. npm install : to install node modules
-2. npm prisma generate
+2. npx prisma generate
 3. node index.js : to run backend service
 
 Frontend CMD
