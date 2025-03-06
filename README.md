@@ -1,25 +1,3 @@
-# PERN fullstack web-application for basic user management
-
-- Run database dockerize by CMD : docker compose up -d db
-- Run docker compose build : for build docker
-- Run docker compose up -d backend : to run dockerized backend
-- Run docker exec -it backend npx prisma migrate dev --name init : to migrate database
-
-Backend CMD
-add .env file with DATABASE_URL config
-DATABASE_URL="postgresql://postgres:postgres@localhost:5435/postgres?schema=public"
-
-* If you want to run backend while developing(can edit an re-run), stop backend container before.
-1. npm install : to install node modules
-2. npx prisma generate
-3. node index.js : to run backend service
-
-Frontend CMD
-1. npm install : to install node modules
-2. npm run dev : to run frontend
-
-----------------------------------------------------------------------------------------------------------------------------
-
 # 🚀 PERN Fullstack Web Application for Basic User Management
 
 This project is a **PERN** (PostgreSQL, Express.js, React, Node.js) fullstack web application for basic user management.
@@ -39,6 +17,43 @@ This project is a **PERN** (PostgreSQL, Express.js, React, Node.js) fullstack we
 1. **Start the database container**  
    ```sh
    docker compose up -d db
+2. **Build the Docker containers**  
+   ```sh
+   docker compose build
+3. **Start the backend container**  
+   ```sh
+   docker compose up -d backend
+4. **Run database migrations**
+   ```sh
+   docker exec -it backend npx prisma migrate dev --name init
 
+## 🔧 Backend Setup (Development Mode)
 
+1. **Create a .env file and add the following database configuration:**
+   ```sh
+   DATABASE_URL="postgresql://postgres:postgres@localhost:5435/postgres?schema=public"
+2. **Stop the backend container before running in development mode:**
+   ```sh
+   docker stop backend
+3. **Install dependencies:**
+   ```sh
+   npm install
+4. **Generate Prisma Client**
+   ```sh
+   npx prisma generate
+5. **Start the backend service:**
+   ```sh
+   node index.js
+
+## 🎨 Frontend Setup
+1. **Install dependencies:**
+   ```sh
+   npm install
+2. **Start the frontend development server:**
+   ```sh
+   npm run dev
+
+## 📜 Notes
+- For development, ensure the backend container is stopped before running locally.
+- For production, use docker compose up -d to run services in detached mode.
 
