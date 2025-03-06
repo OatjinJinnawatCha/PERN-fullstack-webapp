@@ -1,8 +1,8 @@
 # PERN fullstack web-application for basic user management
 
-Run database dockerize by CMD : docker compose up -d db
-Run docker compose build : for build docker
-Run docker exec -it backend npx prisma migrate dev --name init : to migrate database
+- Run database dockerize by CMD : docker compose up -d db
+- Run docker compose build : for build docker
+- Run docker exec -it backend npx prisma migrate dev --name init : to migrate database
 
 Backend CMD
 add .env file with DATABASE_URL config
